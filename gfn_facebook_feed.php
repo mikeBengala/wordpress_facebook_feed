@@ -21,10 +21,10 @@ function gfn_fb_feed_scripts() {
     wp_enqueue_script( 'gfn_fb_feed_script', plugins_url( '/js/script.js', __FILE__ ), array( 'jquery', 'fb_api')  );
     // End Register scripts --------------------------------------------------->
 
-    // Send options to script as a json array --------------------------------->
+    // Send a var to my script ------------------------------------------------>
     $gfn_fb_access_token = get_option('gfn_fb_access_token');
     wp_localize_script( 'gfn_fb_feed_script', 'gfn_fb_access_token', $gfn_fb_access_token );
-    // end Send options to script as a json array ----------------------------->
+    // end Send a var to my script -------------------------------------------->
 
     // Register styles -------------------------------------------------------->
     wp_enqueue_style( 'owl-theme', plugins_url( '/css/owl.theme.min.css', __FILE__ ) );
