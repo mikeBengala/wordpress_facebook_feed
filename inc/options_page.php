@@ -16,6 +16,7 @@ function register_gfn_fb_feed_settings() {
 	//register our settings
 	register_setting( 'gfn-fb-feed-settings-group', 'gfn_fb_access_token' );
 	register_setting( 'gfn-fb-feed-settings-group', 'gfn_fb_page_id' );
+	register_setting( 'gfn-fb-feed-settings-group', 'gfn_fb_language' );
 
 }
 
@@ -36,6 +37,11 @@ function gfn_fb_feed_settings_page() {
 		<tr valign="top">
         <th scope="row">Facebook Business Page ID <br /><small> Get it at your facebook business page > About > Page Information > Page ID</small></th>
         <td><input type="text" name="gfn_fb_page_id" value="<?php echo esc_attr( get_option('gfn_fb_page_id') ); ?>" /></td>
+        </tr>
+
+		<tr valign="top">
+        <th scope="row">Locale / language <br /><small> example: pt_PT <br />(optional, fiels, default will be US English)</small></th>
+        <td><input type="text" name="gfn_fb_language" value="<?php echo esc_attr( get_option('gfn_fb_language') ); ?>" /></td>
         </tr>
 
     </table>

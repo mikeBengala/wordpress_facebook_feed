@@ -2,11 +2,17 @@ Main_gfn_fb = {
     init_facebook_api:function(){
         var access_token = gfn_fb_settings.access_token,
             page_id = gfn_fb_settings.page_id,
+            language = gfn_fb_settings.language,
+            the_language_line = "",
             fields = "id,name,link,feed{created_time,message,actions,full_picture,from,type,permalink_url,story,likes,shares,comments}";
+
+            if(language != undefined && language != ""){
+                the_language_line = "&locale=" + language;
+            }
 
         if(access_token != undefined && page_id != undefined){
             FB.api(
-                'https://graph.facebook.com/' + page_id + '?fields=' + fields + '&access_token=' + access_token,
+                'https://graph.facebook.com/' + page_id + '?fields=' + fields + '&access_token=' + access_token + the_language_line,
                 'GET',
                  {"fields":fields},
                 function(response) {
@@ -26,15 +32,15 @@ Main_gfn_fb = {
 
 
                             //setup message
-                            var message = post.message;
-                            if(message == undefined){
-                                message = "";
+                            var message = "";
+                            if(post.message != undefined){
+                                message = post.message;
                             }
 
                             //setup story
-                            var story = post.story;
-                            if(story == undefined){
-                                story = "";
+                            var story = "";
+                            if(post.story != undefined){
+                                story = post.story;
                             }
 
                             //setup likes count

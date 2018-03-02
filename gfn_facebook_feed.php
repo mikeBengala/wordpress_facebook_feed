@@ -24,9 +24,12 @@ function gfn_fb_feed_scripts() {
     // Send a var to my script ------------------------------------------------>
     $gfn_fb_access_token = get_option('gfn_fb_access_token');
     $gfn_fb_page_id = get_option('gfn_fb_page_id');
+    $gfn_fb_page_language = get_option('gfn_fb_language');
+
     $gfn_fb_settings = array(
         "access_token" => $gfn_fb_access_token,
-        "page_id" => $gfn_fb_page_id
+        "page_id" => $gfn_fb_page_id,
+        "language" => $gfn_fb_page_language
     );
 
     wp_localize_script( 'gfn_fb_feed_script', 'gfn_fb_settings', $gfn_fb_settings );
