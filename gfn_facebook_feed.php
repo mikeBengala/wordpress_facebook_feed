@@ -23,7 +23,13 @@ function gfn_fb_feed_scripts() {
 
     // Send a var to my script ------------------------------------------------>
     $gfn_fb_access_token = get_option('gfn_fb_access_token');
-    wp_localize_script( 'gfn_fb_feed_script', 'gfn_fb_access_token', $gfn_fb_access_token );
+    $gfn_fb_page_id = get_option('gfn_fb_page_id');
+    $gfn_fb_settings = array(
+        "access_token" => $gfn_fb_access_token,
+        "page_id" => $gfn_fb_page_id
+    );
+
+    wp_localize_script( 'gfn_fb_feed_script', 'gfn_fb_settings', $gfn_fb_settings );
     // end Send a var to my script -------------------------------------------->
 
     // Register styles -------------------------------------------------------->

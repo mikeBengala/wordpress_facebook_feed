@@ -15,7 +15,7 @@ function gfn_fb_feed_create_menu() {
 function register_gfn_fb_feed_settings() {
 	//register our settings
 	register_setting( 'gfn-fb-feed-settings-group', 'gfn_fb_access_token' );
-
+	register_setting( 'gfn-fb-feed-settings-group', 'gfn_fb_page_id' );
 
 }
 
@@ -29,8 +29,13 @@ function gfn_fb_feed_settings_page() {
     <?php do_settings_sections( 'gfn-fb-feed-settings-group' ); ?>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Facebook Graph API Access Token</th>
+        <th scope="row">Facebook Extended User Access Token <br /><small> <a href="https://developers.facebook.com/tools/accesstoken/" target="_blank">Get it here</a> > (user token) Debug > Extend Access Token</small></th>
         <td><input type="text" name="gfn_fb_access_token" value="<?php echo esc_attr( get_option('gfn_fb_access_token') ); ?>" /></td>
+        </tr>
+
+		<tr valign="top">
+        <th scope="row">Facebook Business Page ID <br /><small> Get it at your facebook business page > About > Page Information > Page ID</small></th>
+        <td><input type="text" name="gfn_fb_page_id" value="<?php echo esc_attr( get_option('gfn_fb_page_id') ); ?>" /></td>
         </tr>
 
     </table>
