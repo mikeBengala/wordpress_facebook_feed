@@ -36,7 +36,6 @@ function gfn_fb_feed_scripts() {
     // end Send a var to my script -------------------------------------------->
 
     // Register styles -------------------------------------------------------->
-    wp_enqueue_style( 'owl-theme', plugins_url( '/css/owl.theme.min.css', __FILE__ ) );
     wp_enqueue_style( 'owl-carousel', plugins_url( '/css/owl.carousel.min.css', __FILE__ ) );
     wp_enqueue_style( 'style-gfn-fb-feed', plugins_url( '/css/gfn_facebook_feed.min.css', __FILE__ ) );
     // End Register Styles ---------------------------------------------------->

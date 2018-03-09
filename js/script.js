@@ -32,9 +32,15 @@ Main_gfn_fb = {
 
 
                             //setup message
-                            var message = "";
+                            var message = "",
+                                max_length = 350;
                             if(post.message != undefined){
-                                message = post.message;
+                                if(post.message.length < max_length){
+                                    message = post.message;
+                                }
+                                else{
+                                    message = post.message.substring(0, max_length) + "...";
+                                }
                             }
 
                             //setup story
@@ -134,6 +140,7 @@ Main_gfn_fb = {
             autoplay:true,
             autoplayHoverPause:true,
             nav:true,
+            autoHeight:true,
             responsive:{
                 0:{
                     items:1,
